@@ -306,7 +306,8 @@ class ShoppingCart extends Object
     public function get(Buyable $buyable, $customfilter = array())
     {
         $order = $this->current();
-        if (Config::inst()->get('ShoppingCart', 'cant_add_same_product')) {
+        if (Config::inst()->get('ShoppingCart', 'cant_add_same_product') 
+            && Controller::curr()->ClassName != 'CartPage') {
             return false;
         }
         if (!$buyable || !$order) {
