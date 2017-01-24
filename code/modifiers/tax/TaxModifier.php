@@ -25,7 +25,7 @@ class TaxModifier extends OrderModifier
                     'TaxModifier.AtRate',
                     '@ {Rate}%',
                     '',
-                    array('Rate' => number_format($this->Rate * 100, 1))
+                    array('Rate' => number_format($this->Rate * 100, 0))
                 );
         }
         return $title;
