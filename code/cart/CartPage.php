@@ -86,6 +86,13 @@ class CartPage_Controller extends Page_Controller
         "updatecart",
     );
 
+    public function init()
+    {
+        parent::init();
+
+        $this->extend('updateInitCartPage');
+    }
+
     /**
      * Display a title if there is no model, or no title.
      */
