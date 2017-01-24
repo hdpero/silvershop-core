@@ -149,9 +149,10 @@ class OrderEmailNotifier
     {
         $subject = _t(
             'ShopEmail.ReceiptSubject',
-            'Order #{OrderNo} receipt',
+            'Receipt #{InvoiceNo} for order #{OrderNo}',
             '',
-            array('OrderNo' => $this->order->Reference)
+            array('OrderNo' => $this->order->Reference,
+                  'InvoiceNo' => $this->order->Invoice()->ReceiptNo)
         );
 
         return $this->sendEmail(
