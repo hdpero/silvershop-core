@@ -484,6 +484,13 @@ class Product_Controller extends Page_Controller
 
     public         $formclass       = "AddProductForm"; //allow overriding the type of form used
 
+    public function init()
+    {
+        parent::init();
+
+        $this->extend('updateInitProductController');
+    }
+
     public function Form()
     {
         $formclass = $this->formclass;
